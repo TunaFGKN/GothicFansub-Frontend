@@ -1,1 +1,24 @@
-<p>manga-details works!</p>
+<div class="d-flex justify-content-center align-items-center">
+    <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+<table *ngIf="dataLoaded==true" class="table">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>Manga Name</th>
+          <th>Mangaka</th>
+          <th>Genre</th>
+          <th>Release Year</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let mangaDetail of mangaDetails">
+        <td>{{ mangaDetail.mangaId }}</td>
+        <td>{{ mangaDetail.mangaName }}</td>
+        <td>{{ mangaDetail.mangakaName }}</td>
+        <td>{{ mangaDetail.genreName }}</td>
+        <td>{{ mangaDetail.releaseYear }}</td>
+      </tr>
+</table>
