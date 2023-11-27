@@ -1,1 +1,7 @@
-<p>genre works!</p>
+<div *ngIf="dataLoaded">
+    <ul class="list-group">
+      <li *ngFor="let genre of genres" class="list-group-item">
+        {{ genre.genreName }}
+      </li>
+    </ul>
+  </div>
